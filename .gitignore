@@ -1,0 +1,7 @@
+*.kicad_prl
+*.lck
+.history/
+*-backups/
+_autosave-*
+*.bak
+temp-freerouting.dsn

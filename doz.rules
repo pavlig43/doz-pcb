@@ -1,0 +1,64 @@
+
+(rules PCB freerouting.dsn
+  (snapAngle 
+    fortyfive_degree
+  )
+  (rule
+    (width 500.0)
+    (clearance 300.0)
+    (clearance 250.0 (type smd_to_turn_gap))
+    (clearance 75.0 (type smd))
+    (clearance 300.0 (type "12V,Default"))
+    (clearance 500.0 (type "board_edge"))
+  )
+  (padstack "Via[0-1]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:300_um" "Via[0-1]_600:300_um" default
+  )
+  (via 
+    "Via[0-1]_600:300_um-12V,Default" "Via[0-1]_600:300_um" "12V,Default"
+  )
+  (viaRule
+    default "Via[0-1]_600:300_um"
+  )
+  (viaRule
+    default "Via[0-1]_600:300_um"
+  )
+  (viaRule
+    "12V,Default" "Via[0-1]_600:300_um-12V,Default"
+  )
+  (class default
+    /D3 "unconnected-(A1-A2-Pad21)" "unconnected-(A1-A0-Pad19)" +5V "unconnected-(A1-~{RESET}-Pad3)" "unconnected-(A1-D1{slash}TX-Pad1)" "unconnected-(A1-AREF-Pad18)" "unconnected-(A1-A7-Pad26)"
+    "unconnected-(A1-~{RESET}-Pad28)" /D5 "unconnected-(A1-VIN-Pad30)" "unconnected-(A1-A1-Pad20)" "unconnected-(A1-D2-Pad5)" "unconnected-(A1-A3-Pad22)" "unconnected-(A1-D13-Pad16)" /G
+    /SDA "unconnected-(A1-A6-Pad25)" /D6 /D11 "unconnected-(A1-3V3-Pad17)" GND /SCL /B
+    "unconnected-(A1-D0{slash}RX-Pad2)" /D10 /R /D12 /D4 "Net-(J2-Pin_4)" "Net-(J2-Pin_1)" "Net-(J2-Pin_3)"
+    "unconnected-(U1-OUT2-Pad8)" "unconnected-(U1-GND(TB)-Pad3)" "unconnected-(U1-VM(TB)-Pad1)" "unconnected-(U1-OUT1-Pad7)" "unconnected-(U2-GND-Pad5)" "unconnected-(U2-GND-Pad6)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "12V,Default"
+    "12V"
+    (clearance_class "12V,Default")
+    (via_rule "12V,Default")
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
