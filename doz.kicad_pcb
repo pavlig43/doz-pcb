@@ -1305,12 +1305,6 @@
 		(path "/ac0d50a3-0af0-4bd5-af7e-128979edacc1")
 		(sheetname "/")
 		(sheetfile "doz.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "3" "4" "1" "2")
-			)
-		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 16.51 -10.668)
@@ -1393,11 +1387,11 @@
 			(layer "F.CrtYd")
 			(uuid "7e77861d-ea92-4b6c-b0a8-c5ca2c911524")
 		)
-		(fp_text user "IN+"
+		(fp_text user "OUT-"
 			(at 10.16 -9.3483 90)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "e7a2f563-25f5-4c82-9b97-e507acd043ab")
+			(uuid "066c5a16-dc1c-4139-b182-4a9caab28e8f")
 			(effects
 				(font
 					(size 1.2 1.2)
